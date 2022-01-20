@@ -90,6 +90,23 @@ class SLL {
         console.log(sum)
         return sum;
     };
+
+    contains(value) {
+        if (this.head == null){
+            return null;
+        }
+        let runner = this.head;
+        console.log("CONTAINS RUNNER: ", runner)
+
+        while(runner !== null){
+            if (runner.data == value){
+                return true
+            }
+            runner = runner.next
+            console.log("CONTAIN METHOD RUNNER.DATA ", runner)
+        }
+        return false;
+    }
 }
 
 let newSLL = new SLL()
@@ -98,5 +115,11 @@ console.log(newSLL)
 newSLL.addFront(1).addFront(2).addFront(3).addFront(4)
 console.log(newSLL)
 
+newSLL.removeFront()
+console.log("AFTER REMOVING FRONT: ", newSLL)
 newSLL.findSum()
 
+console.log(newSLL.contains("Hello"))
+console.log(newSLL.contains(2))
+
+console.log("LINKED LIST AS OF NOW: ", newSLL)
