@@ -90,7 +90,7 @@ class SLL {
         console.log(sum)
         return sum;
     };
-
+// CONTAINS
     contains(value) {
         if (this.head == null){
             return null;
@@ -106,7 +106,23 @@ class SLL {
             console.log("CONTAIN METHOD RUNNER.DATA ", runner)
         }
         return false;
-    }
+    };
+// LENGTH
+    length() {
+        if (this.head == null) {
+            return null
+        }
+        let runner = this.head;
+        let count = 0;
+
+        while (runner !== null) {
+            count++
+            runner = runner.next
+        }
+        console.log("THE LENGTH OF THE ARRAY IS: ", count)
+        return count
+    };
+    
 }
 
 let newSLL = new SLL()
@@ -123,3 +139,7 @@ console.log(newSLL.contains("Hello"))
 console.log(newSLL.contains(2))
 
 console.log("LINKED LIST AS OF NOW: ", newSLL)
+console.log("LL LENGTH RIGHT NOW IS: ", newSLL.length())
+newSLL.addFront(6).addFront(7)
+
+console.log("LL LENGTH AFTER ADDING 2 MORE NODES IS: ", newSLL.length())
