@@ -138,6 +138,27 @@ class SLL {
         }
         console.log("LIST OF VALUES: ", stringValues)
         return stringValues
+    };
+
+    insertAt(value, index){
+        if (index < 0) {
+            return false;
+        }
+
+        let newNode = new Node(value);
+        let currentNode = this.head;
+        let previousNode;
+        let currentIndex = 0;
+// insert node wherever currentIndex === index
+        while(currentIndex !== index){
+            // move currentNode and previousNode pointers
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            currentIndex++
+        }
+        // if we get here then we found the index we are looking for, aka currentIndex === index
+        newNode.next = currentNode;
+        previousNode.next = newNode;
     }
 }
 
